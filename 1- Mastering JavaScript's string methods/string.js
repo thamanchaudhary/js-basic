@@ -51,3 +51,14 @@ console.log(charAtStr); // T
 const strSplit = "Hello Thaman Tharu";
 splitStr = strSplit.split(" ");
 console.log(splitStr); // [ 'Hello', 'Thaman', 'Tharu' ]
+
+
+//  SPLICE METHOD
+// The splice() method adds/removes items to/from an array, and returns the removed item(s).
+
+// Syntax
+
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
+let splicedFruits = fruits.splice(2, 0, "Lemon", "Kiwi");
+console.log(splicedFruits); // []
+console.log(fruits); // [ 'Banana', 'Orange', 'Lemon', 'Kiwi', 'Apple', 'Mango' ]
