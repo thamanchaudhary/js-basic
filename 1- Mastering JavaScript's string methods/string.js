@@ -45,13 +45,11 @@ const strCharAt = "Hello Thaman Tharu";
 charAtStr = strCharAt.charAt(6);
 console.log(charAtStr); // T
 
-
 //The split() method converts a string into an array of substrings, and returns the new array.
 //SPLIT
 const strSplit = "Hello Thaman Tharu";
 splitStr = strSplit.split(" ");
 console.log(splitStr); // [ 'Hello', 'Thaman', 'Tharu' ]
-
 
 //  SPLICE METHOD
 // The splice() method adds/removes items to/from an array, and returns the removed item(s).
@@ -62,3 +60,59 @@ let fruits = ["Banana", "Orange", "Apple", "Mango"];
 let splicedFruits = fruits.splice(2, 0, "Lemon", "Kiwi");
 console.log(splicedFruits); // []
 console.log(fruits); // [ 'Banana', 'Orange', 'Lemon', 'Kiwi', 'Apple', 'Mango' ]
+
+/********************
+ Helper Functions Example
+ ********************/
+
+function randomExample(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+let = randNumber = randomExample(1, 9);
+console.log(randNumber);
+
+//digit to word conversion
+function digitToWord(digit) {
+  switch (digit) {
+    case 0:
+      return "Zero";
+    case 1:
+      return "One";
+    case 2:
+      return "Two";
+    case 3:
+      return "Three";
+    case 4:
+      return "Four";
+    case 5:
+      return "Five";
+    case 6:
+      return "Six";
+    case 7:
+      return "Seven";
+    case 8:
+      return "Eight";
+    case 9:
+      return "Nine";
+    default:
+      return "Not a digit!";
+  }
+}
+
+let digit = 5;
+let word = digitToWord(digit);
+console.log(word);
+
+//english to nepali number conversion
+function englishToNepaliNumber(number) {
+  let nepaliNumber = "";
+  const numberString = number.toString();
+  for (let i = 0; i < numberString.length; i++) {
+    nepaliNumber += digitToWord(parseInt(numberString[i]));
+  }
+  return nepaliNumber;
+}
+
+let nepaliNumber = englishToNepaliNumber(12345);
+console.log(nepaliNumber);
