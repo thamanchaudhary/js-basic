@@ -73,46 +73,43 @@ let = randNumber = randomExample(1, 9);
 console.log(randNumber);
 
 //digit to word conversion
-function digitToWord(digit) {
-  switch (digit) {
-    case 0:
-      return "Zero";
-    case 1:
-      return "One";
-    case 2:
-      return "Two";
-    case 3:
-      return "Three";
-    case 4:
-      return "Four";
-    case 5:
-      return "Five";
-    case 6:
-      return "Six";
-    case 7:
-      return "Seven";
-    case 8:
-      return "Eight";
-    case 9:
-      return "Nine";
-    default:
-      return "Not a digit!";
-  }
+// function digitToWord(digit) {
+//   switch (digit) {
+//     case 0:
+//       return "Zero";
+//     case 1:
+//       return "One";
+//     case 2:
+//       return "Two";
+//     case 3:
+//       return "Three";
+//     case 4:
+//       return "Four";
+//     case 5:
+//       return "Five";
+//     case 6:
+//       return "Six";
+//     case 7:
+//       return "Seven";
+//     case 8:
+//       return "Eight";
+//     case 9:
+//       return "Nine";
+//     default:
+//       return "Not a digit!";
+//   }
+// }
+
+//get getUnicodeNumber number
+function getUnicodeNumber(input) {
+  const standardNumsets = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  const nepaliNumsets = ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९"];
+  let result = str.replace(standardNumsets, nepaliNumsets, input);
+  return result;
 }
 
-let digit = 5;
-let word = digitToWord(digit);
-console.log(word);
+//Example
+let unicodeNumber = getUnicodeNumber(5);
+console.log(unicodeNumber);
 
-//english to nepali number conversion
-function englishToNepaliNumber(number) {
-  let nepaliNumber = "";
-  const numberString = number.toString();
-  for (let i = 0; i < numberString.length; i++) {
-    nepaliNumber += digitToWord(parseInt(numberString[i]));
-  }
-  return nepaliNumber;
-}
 
-let nepaliNumber = englishToNepaliNumber(12345);
-console.log(nepaliNumber);
